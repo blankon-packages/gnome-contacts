@@ -1,20 +1,43 @@
-gnome-contacts (3.8.0-1blankon1) suroboyo; urgency=low
+gnome-contacts (3.10.1-2blankon1) suroboyo; urgency=medium
 
   * New upstream release
 
- -- Mahyuddin Idram Ahmad <dotovr@di.blankon.in>  Thu, 04 Apr 2013 23:55:54 +0700
+ -- Mahyuddin Idram Ahmad <dotovr@di.blankon.in>  Sun, 12 Jan 2014 21:05:42 +0700
+
+gnome-contacts (3.10.1-2) experimental; urgency=low
+
+  * Build against G3.10 gnome-destkop
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Thu, 07 Nov 2013 08:06:01 +0100
+
+gnome-contacts (3.10.1-1) experimental; urgency=low
+
+  * New upstream release
+  * Bump b-d on valac, folks and gtk+3
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Fri, 01 Nov 2013 19:23:45 +0100
+
+gnome-contacts (3.8.3-1) unstable; urgency=low
+
+  [ Jeremy Bicha ]
+  * debian/control.in:
+    - Drop alternate build-depends on valac-0.18 since it's no longer
+      in Debian
+
+  [ Michael Biebl ]
+  * New upstream release.
+  * Loosen Build-Depends on libgnome-desktop-3-dev, we do not strictly require
+    version (>= 3.6.0) which is not yet available in unstable.
+  * Bump Standards-Version to 3.9.4. No further changes.
+  * Upload to unstable.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 19 Sep 2013 18:23:06 +0200
 
 gnome-contacts (3.8.0-1) experimental; urgency=low
 
   * New upstream release.
 
  -- Andreas Henriksson <andreas@fatal.se>  Thu, 04 Apr 2013 14:59:29 +0200
-
-gnome-contacts (3.7.91-1blankon1) suroboyo; urgency=low
-
-  * New upstream release
-
- -- Mahyuddin Idram Ahmad <dotovr@di.blankon.in>  Tue, 26 Mar 2013 15:51:47 +0700
 
 gnome-contacts (3.7.91-1) experimental; urgency=low
 
@@ -33,13 +56,6 @@ gnome-contacts (3.7.91-1) experimental; urgency=low
 
  -- Sjoerd Simons <sjoerd@debian.org>  Sun, 24 Mar 2013 18:24:03 +0100
 
-gnome-contacts (3.6.1-1blankon1) suroboyo; urgency=low
-
-  * New upstream release
-  * Change Maintainer
-
- -- Mahyuddin <dotovr@di.blankon.in>  Mon, 04 Mar 2013 19:40:11 +0700
-
 gnome-contacts (3.6.1-1) experimental; urgency=low
 
   [ Jeremy Bicha ]
@@ -50,6 +66,19 @@ gnome-contacts (3.6.1-1) experimental; urgency=low
   * New upstream release
 
  -- Sjoerd Simons <sjoerd@debian.org>  Thu, 18 Oct 2012 23:35:54 +0200
+
+gnome-contacts (3.4.1-2) unstable; urgency=low
+
+  [ Jeremy Bicha ]
+  * debian/control.in:
+    - Build-depend on valac (>= 0.14.0) (Closes: #675643)
+
+  [ Michael Biebl ]
+  * debian/patches/01-icon-rename.patch
+    - Handle renaming of the preferences-system-date-and-time-symbolic icon in
+      gnome-icon-theme-symbolic. Patch cherry-picked from upstream Git.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 16 Jun 2013 21:41:08 +0200
 
 gnome-contacts (3.4.1-1) unstable; urgency=low
 
