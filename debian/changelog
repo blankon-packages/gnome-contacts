@@ -1,3 +1,17 @@
+gnome-contacts (3.12.0-1blankon1) tambora; urgency=low
+
+  [ Simon McVittie ]
+  * Team upload
+  * New upstream release
+    - has undeclared dependency on Gtk 3.12, update build-dependency
+  * Use dh-autoreconf
+  * Don't force use of GNOME 3.10 gnome-desktop
+
+  [ Mahyuddin Ramli ]
+  * Bumpp Build-depends GTK+3.0 glib2.0 gnome-desktops3
+
+ -- Mahyuddin Ramli <yudi.al@gmail.com>  Sat, 29 Mar 2014 17:32:58 +0700
+
 gnome-contacts (3.10.1-2blankon1) suroboyo; urgency=medium
 
   * New upstream release
