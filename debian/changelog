@@ -1,3 +1,9 @@
+gnome-contacts (3.12.0-1blankon2) tambora; urgency=medium
+
+  * bump libgnome-desktop-3-dev => 3.12.0
+
+ -- Azis Ws <azis.astrojim@surabaya.di.blankon.in>  Sat, 05 Apr 2014 23:36:35 +0700
+
 gnome-contacts (3.12.0-1blankon1) tambora; urgency=low
 
   [ Simon McVittie ]
