@@ -1,3 +1,10 @@
+gnome-contacts (3.12.0-1blankon3) tambora; urgency=low
+
+  * Bump libgoa-1.0-dev >= 3.12
+  * Bump Valac => 0.23
+
+ -- Aan Yustian <aftian@localhost>  Sun, 06 Apr 2014 08:20:57 +0700
+
 gnome-contacts (3.12.0-1blankon2) tambora; urgency=medium
 
   * bump libgnome-desktop-3-dev => 3.12.0
