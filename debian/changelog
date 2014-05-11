@@ -1,6 +1,7 @@
-gnome-contacts (3.12.0-1blankon1) tambora; urgency=medium
+gnome-contacts (3.12.0-1+b1blankon1) tambora; urgency=low
 
   * Merge Whit Sid
+  * +b1 version debian upload to jessie
 
  -- Rahman Yusri Aftian <aftian@di.blankon.in>  Thu, 01 May 2014 06:25:26 +0000
 
