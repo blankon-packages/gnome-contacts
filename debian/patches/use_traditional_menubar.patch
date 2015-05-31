@@ -1,0 +1,77 @@
+From 1cbbd7d107e243342cf16a113f44fc2352609da9 Mon Sep 17 00:00:00 2001
+From: Tim Lunn <tim@feathertop.org>
+Date: Wed, 4 Mar 2015 08:56:14 +1100
+Subject: [PATCH] Use traditional menubar for environments that don't use
+ appmenu's
+
+---
+ data/ui/app-menu.ui   | 35 +++++++++++++++++++++++++++++++++++
+ src/contacts-app.vala |  7 ++++++-
+ 2 files changed, 41 insertions(+), 1 deletion(-)
+
+diff --git a/data/ui/app-menu.ui b/data/ui/app-menu.ui
+index 252603c..ad1d947 100644
+--- a/data/ui/app-menu.ui
++++ b/data/ui/app-menu.ui
+@@ -68,4 +68,39 @@
+       <attribute name="label" translatable="yes">Notes</attribute>
+     </item>
+   </menu>
++  <menu id="menubar">
++    <submenu>
++      <attribute name="label" translatable="yes">_Contacts</attribute>
++        <section>
++          <item>
++        	<attribute name="action">app.new_contact</attribute>
++        	<attribute name="label" translatable="yes">_New Contact</attribute>
++          </item>
++          <item>
++        	<attribute name="action">app.change_book</attribute>
++        	<attribute name="label" translatable="yes">_Change Address Book...</attribute>
++          </item>
++        </section>
++        <section>
++          <item>
++        	<attribute name="action">app.quit</attribute>
++        	<attribute name="label" translatable="yes">_Quit</attribute>
++        	<attribute name="accel">&lt;Primary&gt;q</attribute>
++          </item>
++        </section>
++    </submenu>
++    <submenu>
++      <attribute name="label" translatable="yes">_Help</attribute>
++        <section>
++          <item>
++        	<attribute name="action">app.help</attribute>
++        	<attribute name="label" translatable="yes">_Help</attribute>
++          </item>
++          <item>
++        	<attribute name="action">app.about</attribute>
++        	<attribute name="label" translatable="yes">_About</attribute>
++          </item>
++        </section>
++    </submenu>
++  </menu>
+ </interface>
+diff --git a/src/contacts-app.vala b/src/contacts-app.vala
+index 6b86e80..eb944e3 100644
+--- a/src/contacts-app.vala
++++ b/src/contacts-app.vala
+@@ -188,7 +188,12 @@ public class Contacts.App : Gtk.Application {
+     this.add_accelerator ("<Primary>n", "app.new_contact", null);
+ 
+     var builder = load_ui ("app-menu.ui");
+-    set_app_menu ((MenuModel)builder.get_object ("app-menu"));
++
++    Gtk.Settings gtk_settings = Gtk.Settings.get_default ();
++    if (gtk_settings.gtk_shell_shows_app_menu && !gtk_settings.gtk_shell_shows_menubar)
++      set_app_menu ((MenuModel)builder.get_object ("app-menu"));
++    else
++      set_menubar ((MenuModel)builder.get_object ("menubar"));
+   }
+ 
+   private void create_window () {
+-- 
+2.1.4
+
+

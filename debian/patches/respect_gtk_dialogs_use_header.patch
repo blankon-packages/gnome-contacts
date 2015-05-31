@@ -1,0 +1,36 @@
+From be29f306b73b256510c6a8467ca8600314d2a265 Mon Sep 17 00:00:00 2001
+From: Tim Lunn <tim@feathertop.org>
+Date: Wed, 4 Mar 2015 08:27:01 +1100
+Subject: [PATCH 1/2] Respect gtk-dialogs-use-header setting for dialogs
+
+https://bugzilla.gnome.org/show_bug.cgi?id=745566
+---
+ src/contacts-app.vala                    | 11 ++++++++---
+ src/contacts-avatar-dialog.vala          |  3 ++-
+ src/contacts-linked-accounts-dialog.vala |  3 ++-
+ 3 files changed, 12 insertions(+), 5 deletions(-)
+
+diff --git a/src/contacts-app.vala b/src/contacts-app.vala
+index 6b86e80..5258f6a 100644
+--- a/src/contacts-app.vala
++++ b/src/contacts-app.vala
+@@ -53,11 +53,16 @@ public class Contacts.App : Gtk.Application {
+   }
+ 
+   public void change_address_book () {
++    DialogFlags flags;
++    var use_header = Gtk.Settings.get_default ().gtk_dialogs_use_header;
++
++    flags = DialogFlags.MODAL | DialogFlags.DESTROY_WITH_PARENT;
++    if (use_header)
++      flags |= DialogFlags.USE_HEADER_BAR;
++
+     var dialog = new Dialog.with_buttons (_("Change Address Book"),
+ 					  (Window) window,
+-					  DialogFlags.MODAL |
+-					  DialogFlags.DESTROY_WITH_PARENT |
+-					  DialogFlags.USE_HEADER_BAR,
++					  flags,
+ 					  _("Change"), ResponseType.OK,
+ 					  _("Cancel"), ResponseType.CANCEL,
+ 					  null);
