@@ -1,4 +1,6 @@
-Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: GNOME Contacts
+Upstream-Contact: gnome-contacts-list@gnome.org
 Source: http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/
 
 Files: *

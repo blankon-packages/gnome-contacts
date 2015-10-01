@@ -1,4 +1,0 @@
-use_traditional_titlebars.patch
-respect_gtk_dialogs_use_header.patch
-use_traditional_menubar.patch
-revert-eds-enable-auth-addressbooks.patch
